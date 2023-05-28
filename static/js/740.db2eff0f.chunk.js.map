@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/740.db2eff0f.chunk.js","mappings":"0JAIA,UAJe,WACb,OAAO,wBAAI,gBACZ,C","sources":["Pages/Movies.jsx"],"sourcesContent":["const Movies = () => {\n  return <h2>Movie Search</h2>;\n};\n\nexport default Movies;\n"],"names":[],"sourceRoot":""}
