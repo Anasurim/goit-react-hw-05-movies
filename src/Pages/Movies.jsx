@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { getMoviesBySearchQuerry } from '../service/MovieAPI';
 import SearchBox from 'components/Searchbox';
 import { RotatingLines } from 'react-loader-spinner';
-import MovieListBySearch from 'components/MovieListBySearch';
+import { MovieListBySearch } from 'components/MovieListBySearch';
 
 const Movies = () => {
   const [querry, setQuerry] = useState('');
@@ -59,7 +59,7 @@ const Movies = () => {
           />
         )}
 
-        <MovieListBySearch movieHits={movies} />
+        <MovieListBySearch movies={movies} />
       </main>
     </>
   );
