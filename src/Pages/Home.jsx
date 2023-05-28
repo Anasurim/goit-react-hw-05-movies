@@ -1,4 +1,4 @@
-import getMovies from 'service/MovieAPI';
+import { getMovies } from 'service/MovieAPI';
 import { useState, useEffect } from 'react';
 import { RotatingLines } from 'react-loader-spinner';
 import { MovieList } from 'components/MovieList';

@@ -1,7 +1,7 @@
 // API-Key
 // 4c6e55add2f00844e9f979bd7b0fac7c
 
-const getMovies = async () => {
+export const getMovies = async () => {
   const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
   const BASE_URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 
@@ -15,4 +15,4 @@ const getMovies = async () => {
   }
 };
 
-export default getMovies;
+export const getMoviesById = () => {};
