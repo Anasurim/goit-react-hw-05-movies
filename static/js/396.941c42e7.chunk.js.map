@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/396.941c42e7.chunk.js","mappings":"0JAIA,UAJqB,WACnB,OAAO,wBAAI,WACZ,C","sources":["components/MovieReviews.jsx"],"sourcesContent":["const MovieReviews = () => {\n  return <h2>Reviews</h2>;\n};\n\nexport default MovieReviews;\n"],"names":[],"sourceRoot":""}
