@@ -1,12 +1,16 @@
 import { Suspense, useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { getMoviesById } from '../service/MovieAPI';
 import { RotatingLines } from 'react-loader-spinner';
 import MovieCard from 'components/MovieCard';
+import { BackLink } from '../components/Backlink';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
 
   const movieId = useParams();
 
@@ -30,6 +34,7 @@ const MovieDetails = () => {
 
   return (
     <>
+      <BackLink to={backLinkHref}>Back</BackLink>
       <MovieCard movie={movie} />
 
       {isLoading && (
