@@ -65,7 +65,7 @@ export const getMoviesReviews = async ({ id }) => {
     const response = await fetch(BASE_URL);
     const movieReview = await response.json();
 
-    return movieReview;
+    return movieReview.results;
   } catch (error) {
     console.log(error);
   }
