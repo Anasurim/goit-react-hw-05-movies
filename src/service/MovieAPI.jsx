@@ -42,3 +42,31 @@ export const getMoviesById = async ({ id }) => {
     console.log(error);
   }
 };
+
+export const getMoviesCast = async ({ id }) => {
+  const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
+  const BASE_URL = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`;
+
+  try {
+    const response = await fetch(BASE_URL);
+    const movieCast = await response.json();
+
+    return movieCast.cast;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMoviesReviews = async ({ id }) => {
+  const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
+  const BASE_URL = `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}`;
+
+  try {
+    const response = await fetch(BASE_URL);
+    const movieReview = await response.json();
+
+    return movieReview;
+  } catch (error) {
+    console.log(error);
+  }
+};
