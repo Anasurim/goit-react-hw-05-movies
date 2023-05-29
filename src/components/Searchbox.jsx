@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const SearchBox = ({ onSubmit }) => {
+const SearchBox = ({ onSubmit, onChange }) => {
   const [querry, setQuerry] = useState('');
 
   const handleSubmit = e => {

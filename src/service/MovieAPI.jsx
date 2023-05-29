@@ -28,3 +28,17 @@ export const getMoviesBySearchQuerry = async searchQuerry => {
     console.log(error);
   }
 };
+
+export const getMoviesById = async ({ id }) => {
+  const API_KEY = '4c6e55add2f00844e9f979bd7b0fac7c';
+  const BASE_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
+
+  try {
+    const response = await fetch(BASE_URL);
+    const movieDetails = await response.json();
+
+    return movieDetails;
+  } catch (error) {
+    console.log(error);
+  }
+};
