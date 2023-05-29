@@ -14,5 +14,3 @@ export const MovieListBySearch = ({ movies }) => {
     </ul>
   );
 };
-
-// export default MovieListBySearch;
