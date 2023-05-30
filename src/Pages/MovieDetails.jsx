@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import { getMoviesById } from '../service/MovieAPI';
 import { RotatingLines } from 'react-loader-spinner';
@@ -10,7 +10,9 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/movies';
+  const backLinkHref = useRef(
+    location.state?.from ?? (location.pathname === '/movies' ? '/movies' : '/')
+  );
 
   const movieId = useParams();
 
@@ -20,7 +22,6 @@ const MovieDetails = () => {
 
       try {
         const movie = await getMoviesById(movieId);
-        console.log(movie);
         setMovie(movie);
       } catch (error) {
         console.log(error);
@@ -34,7 +35,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <BackLink to={backLinkHref}>Back</BackLink>
+      <BackLink to={backLinkHref.current}>Back</BackLink>
       <MovieCard movie={movie} />
 
       {isLoading && (
